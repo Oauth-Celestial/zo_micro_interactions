@@ -27,6 +27,8 @@ import 'package:zo_micro_interactions/zo_micro_interactions.dart';
 
 Open Card Animation
 
+![Simulator Screen Recording - iPhone 15 Pro - 2025-12-13 at 16 28 47 (online-video-cutter com)](https://github.com/user-attachments/assets/0bf03c35-6f5a-4e6c-ace7-141f85b60828)
+
 ```dart
 ZoOpenCard(
   heroTag: 'cosmic_run',
