@@ -4,14 +4,17 @@ class BouncyCardWrapper extends StatefulWidget {
   final Widget child;
   final Function onTap;
 
-  const BouncyCardWrapper({Key? key, required this.child, required this.onTap})
-    : super(key: key);
+  const BouncyCardWrapper({
+    super.key,
+    required this.child,
+    required this.onTap,
+  });
 
   @override
-  _BouncyCardWrapperState createState() => _BouncyCardWrapperState();
+  BouncyCardWrapperState createState() => BouncyCardWrapperState();
 }
 
-class _BouncyCardWrapperState extends State<BouncyCardWrapper>
+class BouncyCardWrapperState extends State<BouncyCardWrapper>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;

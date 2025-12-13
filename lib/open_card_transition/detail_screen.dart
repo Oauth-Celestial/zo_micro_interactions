@@ -2,32 +2,31 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class DetailScreen extends StatefulWidget {
+class ZoOpenCardDetailPage extends StatefulWidget {
   final String heroTag;
-  final Color cardColor;
+
   final Widget openCardHeader;
   final Widget body;
   final Curve transitionCurve;
   final Animation<double> routeAnimation;
-  BorderRadiusGeometry? borderRadius;
-  double openCardHeaderHeight;
 
-  DetailScreen({
+  final double openCardHeaderHeight;
+
+  const ZoOpenCardDetailPage({
     required this.heroTag,
-    required this.cardColor,
     required this.openCardHeader,
     required this.body,
     required this.transitionCurve,
     required this.routeAnimation,
     this.openCardHeaderHeight = 300,
-    this.borderRadius,
+    super.key,
   });
 
   @override
-  _DetailScreenState createState() => _DetailScreenState();
+  ZoOpenCardDetailPageState createState() => ZoOpenCardDetailPageState();
 }
 
-class _DetailScreenState extends State<DetailScreen>
+class ZoOpenCardDetailPageState extends State<ZoOpenCardDetailPage>
     with SingleTickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
 
@@ -78,11 +77,10 @@ class _DetailScreenState extends State<DetailScreen>
 
   void _handlePopInAnimation() {
     // Check if the Hero animation is finished
-    if (widget.routeAnimation.value > 0.3) {
-      // Start the subtle content animation
-      _subtleAnimationController.forward();
-      widget.routeAnimation.removeListener(_handlePopInAnimation);
-    }
+
+    // Start the subtle content animation
+    _subtleAnimationController.forward();
+    widget.routeAnimation.removeListener(_handlePopInAnimation);
   }
 
   @override
@@ -117,7 +115,6 @@ class _DetailScreenState extends State<DetailScreen>
                   physics: const BouncingScrollPhysics(),
                   slivers: <Widget>[
                     SliverAppBar(
-                      backgroundColor: widget.cardColor,
                       expandedHeight: widget.openCardHeaderHeight,
                       pinned: true,
                       automaticallyImplyLeading: false,
@@ -142,10 +139,7 @@ class _DetailScreenState extends State<DetailScreen>
                         // Apply fade and slide to the header content
                         background: SlideTransition(
                           position: _translateAnimation,
-                          child: FadeTransition(
-                            opacity: _fadeAnimation,
-                            child: widget.openCardHeader,
-                          ),
+                          child: widget.openCardHeader,
                         ),
                       ),
                     ),

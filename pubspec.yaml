@@ -1,6 +1,7 @@
 name: zo_micro_interactions
-description: "A new Flutter package project."
+description: "A curated set of high-quality Flutter micro-interactions designed for modern, polished apps"
 version: 0.0.1
+repository: https://github.com/Oauth-Celestial/zo_micro_interactions
 # homepage:
 
 environment:
