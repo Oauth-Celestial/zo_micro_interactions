@@ -87,6 +87,7 @@ ZoOpenCard(
   - The main content of the opened detail page.
   - Must be **non-scrollable** — scrolling is handled internally by `ZoOpenCard`.
   - Use layout widgets like `Column`, `Padding`, and `Text`.
+
 Feel free to post a feature requests or report a bug [issues](https://github.com/Oauth-Celestial/zo_micro_interactions/issues).
 
 ## My Other packages
