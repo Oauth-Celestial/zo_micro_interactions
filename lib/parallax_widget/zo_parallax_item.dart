@@ -4,26 +4,24 @@ import 'package:zo_micro_interactions/parallax_widget/parallax_flow_delegate.dar
 class ParallaxItem extends StatelessWidget {
   ParallaxItem({
     super.key,
-    required this.imageUrl,
+    required this.child,
     required this.scrollDirection,
+    this.borderRadius,
   });
 
-  final String imageUrl;
+  final Widget child;
   final Axis scrollDirection;
   final GlobalKey _key = GlobalKey();
+  BorderRadiusGeometry? borderRadius;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(8),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
-        child: ParallaxWidget(
-          backgroundKey: _key,
-          scrollDirection: scrollDirection,
-          child: Image.network(imageUrl, key: _key, fit: BoxFit.cover),
-        ),
+    return ClipRRect(
+      borderRadius: borderRadius ?? BorderRadius.zero,
+      child: ParallaxWidget(
+        backgroundKey: _key,
+        scrollDirection: scrollDirection,
+        child: Container(key: _key, child: child),
       ),
     );
   }

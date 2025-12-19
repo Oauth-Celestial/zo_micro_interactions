@@ -45,9 +45,12 @@ class ParallaxExampleScreen extends StatelessWidget {
             child: PageView.builder(
               controller: PageController(viewportFraction: 0.8),
               itemCount: imageUrls.length,
-              itemBuilder: (context, index) => ParallaxItem(
-                imageUrl: imageUrls[index],
-                scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ParallaxItem(
+                  child: Image.network(imageUrls[index], fit: BoxFit.cover),
+                  scrollDirection: Axis.horizontal,
+                ),
               ),
             ),
           ),
@@ -63,9 +66,12 @@ class ParallaxExampleScreen extends StatelessWidget {
           ...imageUrls.map(
             (url) => SizedBox(
               height: 200,
-              child: ParallaxItem(
-                imageUrl: url,
-                scrollDirection: Axis.vertical,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ParallaxItem(
+                  child: Image.network(url, fit: BoxFit.cover),
+                  scrollDirection: Axis.vertical,
+                ),
               ),
             ),
           ),
