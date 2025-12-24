@@ -1,17 +1,17 @@
 import 'package:flutter/widgets.dart';
 
-class ParallaxFlowDelegate extends FlowDelegate {
-  ParallaxFlowDelegate({
+class ZoParallaxFlowDelegate extends FlowDelegate {
+  final ScrollableState scrollable;
+  final BuildContext listItemContext;
+  final GlobalKey backgroundImageKey;
+  final Axis scrollDirection;
+
+  ZoParallaxFlowDelegate({
     required this.scrollable,
     required this.listItemContext,
     required this.backgroundImageKey,
     required this.scrollDirection,
   }) : super(repaint: scrollable.position);
-
-  final ScrollableState scrollable;
-  final BuildContext listItemContext;
-  final GlobalKey backgroundImageKey;
-  final Axis scrollDirection;
 
   @override
   BoxConstraints getConstraintsForChild(int i, BoxConstraints constraints) {
@@ -70,7 +70,7 @@ class ParallaxFlowDelegate extends FlowDelegate {
   }
 
   @override
-  bool shouldRepaint(ParallaxFlowDelegate oldDelegate) {
+  bool shouldRepaint(ZoParallaxFlowDelegate oldDelegate) {
     return scrollable != oldDelegate.scrollable ||
         listItemContext != oldDelegate.listItemContext ||
         backgroundImageKey != oldDelegate.backgroundImageKey ||

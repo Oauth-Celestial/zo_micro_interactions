@@ -1,84 +1,103 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:zo_micro_interactions/parallax_widget/zo_parallax_item.dart';
+import 'package:flutter/services.dart';
+import 'package:zo_micro_interactions/utils/zo_sparkle_burst.dart';
 
-void main() {
-  runApp(const ParallaxApp());
+void main() => runApp(
+  const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(child: YouTubeSubscribeButton()),
+    ),
+  ),
+);
+
+// --- 1. THE REUSABLE WRAPPER ---
+
+// --- 3. IMPLEMENTATION ---
+class YouTubeSubscribeButton extends StatefulWidget {
+  const YouTubeSubscribeButton({super.key});
+
+  @override
+  State<YouTubeSubscribeButton> createState() => _YouTubeSubscribeButtonState();
 }
 
-class ParallaxApp extends StatelessWidget {
-  const ParallaxApp({super.key});
+class _YouTubeSubscribeButtonState extends State<YouTubeSubscribeButton> {
+  bool isSubscribed = false;
+  bool isPinkPhase = false;
+
+  void _onTap(AnimationController controller) async {
+    if (isSubscribed) {
+      setState(() => isSubscribed = false);
+      return;
+    }
+
+    HapticFeedback.mediumImpact();
+    setState(() => isPinkPhase = true); // Pink flash phase
+    controller.forward(from: 0.0); // Start the sparkle burst
+
+    await Future.delayed(const Duration(milliseconds: 400));
+
+    if (mounted) {
+      setState(() {
+        isPinkPhase = false;
+        isSubscribed = true; // Settle to dark gray
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const ParallaxExampleScreen(),
+    return SparkleBurstWrapper(
+      size: const Size(250, 150), // CUSTOM SIZE PASSED HERE
+      builder: (context, controller) {
+        return GestureDetector(
+          onTap: () => _onTap(controller),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 400),
+            curve: Curves.easeOutBack, // Smooth organic growth
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            decoration: BoxDecoration(
+              color: isPinkPhase
+                  ? const Color(0xFFFF0050)
+                  : (isSubscribed ? const Color(0xFF272727) : Colors.white),
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (isSubscribed || isPinkPhase) ...[
+                  const Icon(
+                    Icons.notifications_none,
+                    color: Colors.white,
+                    size: 20,
+                  ),
+                  const SizedBox(width: 8),
+                ],
+                Text(
+                  isSubscribed ? "Subscribed" : "Subscribe",
+                  style: TextStyle(
+                    color: (isSubscribed || isPinkPhase)
+                        ? Colors.white
+                        : Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+                if (isSubscribed) ...[
+                  const SizedBox(width: 6),
+                  const Icon(
+                    Icons.keyboard_arrow_down,
+                    color: Colors.white,
+                    size: 20,
+                  ),
+                ],
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
-
-class ParallaxExampleScreen extends StatelessWidget {
-  const ParallaxExampleScreen({super.key});
-
-  final List<String> imageUrls = const [
-    'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80',
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Flexible Parallax')),
-      body: ListView(
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              "Horizontal Parallax (PageView)",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ),
-          // --- HORIZONTAL EXAMPLE ---
-          SizedBox(
-            height: 250,
-            child: PageView.builder(
-              controller: PageController(viewportFraction: 0.8),
-              itemCount: imageUrls.length,
-              itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ParallaxItem(
-                  child: Image.network(imageUrls[index], fit: BoxFit.cover),
-                  scrollDirection: Axis.horizontal,
-                ),
-              ),
-            ),
-          ),
-
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              "Vertical Parallax (ListView)",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ),
-          // --- VERTICAL EXAMPLE ---
-          ...imageUrls.map(
-            (url) => SizedBox(
-              height: 200,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ParallaxItem(
-                  child: Image.network(url, fit: BoxFit.cover),
-                  scrollDirection: Axis.vertical,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// --- ITEM COMPONENT ---
