@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zo_micro_interactions/alerts/animated_alert.dart';
+import 'package:zo_micro_interactions/alerts/zo_animated_alert.dart';
 
 class ExAlerts extends StatelessWidget {
   const ExAlerts({super.key});
