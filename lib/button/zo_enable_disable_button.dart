@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zo_micro_interactions/utils/zo_bounce_widget.dart';
 
-class PolishedToggleButton extends StatefulWidget {
+class ZoEnableDisableButton extends StatefulWidget {
   final bool enabled;
   final VoidCallback? onTap;
   final String text;
@@ -15,7 +15,7 @@ class PolishedToggleButton extends StatefulWidget {
   final EdgeInsets padding;
   final Duration duration;
 
-  const PolishedToggleButton({
+  const ZoEnableDisableButton({
     super.key,
     required this.enabled,
     required this.text,
@@ -29,10 +29,10 @@ class PolishedToggleButton extends StatefulWidget {
   });
 
   @override
-  State<PolishedToggleButton> createState() => _PolishedToggleButtonState();
+  State<ZoEnableDisableButton> createState() => _ZoEnableDisableButtonState();
 }
 
-class _PolishedToggleButtonState extends State<PolishedToggleButton>
+class _ZoEnableDisableButtonState extends State<ZoEnableDisableButton>
     with SingleTickerProviderStateMixin {
   @override
   void initState() {

@@ -10,8 +10,8 @@ class ExZoAnimatedText extends StatefulWidget {
 
 class _ExZoAnimatedTextState extends State<ExZoAnimatedText> {
   AnimationController? _controller;
-  ZoAnimatedTextType _type = ZoAnimatedTextType.fancySpring;
-  String animatedText = "Zo Animated Text";
+  ZoAnimatedTextType? _type;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,9 +21,9 @@ class _ExZoAnimatedTextState extends State<ExZoAnimatedText> {
           Expanded(
             child: Center(
               child: ZoAnimatedText(
-                key: ValueKey("$animatedText$_type"),
-                text: animatedText,
-                type: _type,
+                key: ValueKey("animatedText$_type"),
+                text: "Zo Animated Text",
+                type: _type ?? ZoAnimatedTextType.fancySpring,
                 splitByWord: false,
                 style: const TextStyle(
                   fontSize: 40,

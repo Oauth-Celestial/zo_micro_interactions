@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:zo_micro_interactions/text/zo_glitch_text.dart';
 
-class HyperTextDemo extends StatefulWidget {
-  const HyperTextDemo({super.key});
+class ExZoGlitchText extends StatefulWidget {
+  const ExZoGlitchText({super.key});
 
   @override
-  State<HyperTextDemo> createState() => _HyperTextDemoState();
+  State<ExZoGlitchText> createState() => _ExZoGlitchTextState();
 }
 
-class _HyperTextDemoState extends State<HyperTextDemo> {
+class _ExZoGlitchTextState extends State<ExZoGlitchText> {
   String _headerText = "TERMINAL ACCESS";
   bool _trigger = false;
   AnimationController? firstController, secondController;
@@ -30,7 +30,7 @@ class _HyperTextDemoState extends State<HyperTextDemo> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ZoGlitchText(
-              text: _headerText,
+              text: "ZoMicroInteraction",
               autoStart: true,
               onLoaded: (animationController) {
                 firstController = animationController;

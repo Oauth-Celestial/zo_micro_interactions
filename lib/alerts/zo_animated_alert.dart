@@ -23,7 +23,6 @@ void showZoAnimatedDialogue({
     transitionBuilder:
         (context, animationCtrl, secondaryAnimation, dialogChild) {
           switch (animation) {
-            /// 🔹 SCALE BOUNCE (0 → 1.1 → 1.0)
             case AnimatedDialogAnimation.scaleBounce:
               final scaleAnimation =
                   TweenSequence<double>([
@@ -50,7 +49,6 @@ void showZoAnimatedDialogue({
                 ),
               );
 
-            /// 🔹 FADE
             case AnimatedDialogAnimation.fade:
               return FadeTransition(
                 opacity: CurvedAnimation(

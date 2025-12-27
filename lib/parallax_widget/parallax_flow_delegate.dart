@@ -27,7 +27,6 @@ class ZoParallaxFlowDelegate extends FlowDelegate {
     final scrollableBox = scrollable.context.findRenderObject() as RenderBox;
     final listItemBox = listItemContext.findRenderObject() as RenderBox;
 
-    // Calculate position relative to the scrollable area
     final listItemOffset = listItemBox.localToGlobal(
       scrollDirection == Axis.horizontal
           ? listItemBox.size.topCenter(Offset.zero)

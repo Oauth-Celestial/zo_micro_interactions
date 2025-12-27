@@ -25,7 +25,163 @@ import 'package:zo_micro_interactions/zo_micro_interactions.dart';
 
 # Usage
 
-Open Card Animation
+# Text Animation
+
+## 1. Animated Text
+
+```dart
+ZoAnimatedText(
+  key: ValueKey('animatedText$_type'),
+  text: 'Zo Animated Text',
+  type: _type ?? ZoAnimatedTextType.fancySpring,
+  splitByWord: false,
+  style: const TextStyle(
+    fontSize: 40,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  ),
+  onLoaded: (controller) => _controller = controller,
+),
+
+```
+
+## 2.Glitch Text
+
+```dart
+ZoGlitchText(
+  text: 'ZoMicroInteraction',
+  autoStart: true,
+  onLoaded: (animationController) {
+    firstController = animationController;
+  },
+  style: const TextStyle(
+    fontSize: 42,
+    fontWeight: FontWeight.bold,
+    color: Colors.cyanAccent,
+    fontFamily: 'monospace',
+    letterSpacing: 2,
+  ),
+),
+```
+
+## 3.Glitch Price Text
+
+```dart
+ZoGlitchPriceText(
+  price: 54200.50,
+  profitColor: Colors.green,
+  lossColor: Colors.red,
+),
+```
+
+# Alert
+
+```dart
+showZoAnimatedDialogue(
+  context: context,
+  animation: AnimatedDialogAnimation.scaleBounce,
+  child: const CustomDialog(),
+);
+```
+
+# Button
+
+```dart
+ZoEnableDisableButton(
+  enabled: _isButtonEnabled,
+  text: 'SUBMIT',
+  onTap: () {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Action Triggered!'),
+      ),
+    );
+  },
+
+  
+  enabledDecoration: BoxDecoration(
+    color: Colors.blueAccent,
+    borderRadius: BorderRadius.circular(12),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.blueAccent.withOpacity(0.3),
+        blurRadius: 8,
+        offset: const Offset(0, 4),
+      ),
+    ],
+  ),
+  enabledTextStyle: const TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.bold,
+    fontSize: 16,
+  ),
+
+  
+  disabledDecoration: BoxDecoration(
+    color: Colors.grey[300],
+    borderRadius: BorderRadius.circular(12),
+  ),
+  disabledTextStyle: TextStyle(
+    color: Colors.grey[600],
+    fontWeight: FontWeight.normal,
+    fontSize: 16,
+  ),
+),
+```
+
+# Bounce Widget
+
+```dart
+ZoBounceWidget(
+  onTap: () => print('Button Pressed'),
+  child: Container(
+    padding: const EdgeInsets.symmetric(
+      horizontal: 40,
+      vertical: 16,
+    ),
+    decoration: BoxDecoration(
+      color: Colors.black,
+      borderRadius: BorderRadius.circular(16),
+    ),
+    child: const Text(
+      'Get Started',
+      style: TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  ),
+),
+
+
+```
+
+# Parallax Effect
+
+```dart
+SizedBox(
+  height: 250,
+  child: PageView.builder(
+    controller: PageController(
+      viewportFraction: 0.8,
+    ),
+    itemCount: imageUrls.length,
+    itemBuilder: (context, index) => Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ZoParallaxItem(
+        scrollDirection: Axis.horizontal,
+        borderRadius: BorderRadius.circular(10),
+        child: Image.network(
+          imageUrls[index],
+          fit: BoxFit.cover,
+        ),
+      ),
+    ),
+  ),
+),
+```
+
+# Open Card Animation
 
 ![Simulator Screen Recording - iPhone 15 Pro - 2025-12-13 at 16 28 47 (online-video-cutter com)](https://github.com/user-attachments/assets/0bf03c35-6f5a-4e6c-ace7-141f85b60828)
 

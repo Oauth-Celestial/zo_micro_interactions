@@ -10,4 +10,4 @@ export 'text/zo_glitch_price.dart';
 
 export 'alerts/zo_animated_alert.dart';
 
-export 'button/zo_animated_button.dart';
+export 'button/zo_enable_disable_button.dart';

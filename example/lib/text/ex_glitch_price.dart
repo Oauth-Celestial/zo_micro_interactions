@@ -20,7 +20,11 @@ class _ExZoGlitchPriceState extends State<ExZoGlitchPrice> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Just pass the price; the widget handles the rest internally
-            ZoGlitchPriceText(price: _price),
+            ZoGlitchPriceText(
+              price: 54200.50,
+              profitColor: Colors.green,
+              lossColor: Colors.red,
+            ),
             const SizedBox(height: 50),
             ElevatedButton(
               onPressed: () =>
