@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:zo_micro_interactions/alerts/zo_animated_alert.dart';
 
-class ExAlerts extends StatelessWidget {
-  const ExAlerts({super.key});
+class ExZoAlerts extends StatelessWidget {
+  const ExZoAlerts({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Fluid Dialog Demo")),
+      appBar: AppBar(title: const Text("Dialog Demo")),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -21,6 +21,38 @@ class ExAlerts extends StatelessWidget {
                 );
               },
               child: const Text("Scale Bounce"),
+            ),
+
+            ElevatedButton(
+              onPressed: () {
+                showZoAnimatedDialogue(
+                  context: context,
+                  animation: AnimatedDialogAnimation.slideUp,
+                  child: const CustomDialog(),
+                );
+              },
+              child: const Text("Slide Up"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                showZoAnimatedDialogue(
+                  context: context,
+                  animation: AnimatedDialogAnimation.scaleFade,
+                  child: const CustomDialog(),
+                );
+              },
+              child: const Text("Scale Fade"),
+            ),
+
+            ElevatedButton(
+              onPressed: () {
+                showZoAnimatedDialogue(
+                  context: context,
+                  animation: AnimatedDialogAnimation.fade,
+                  child: const CustomDialog(),
+                );
+              },
+              child: const Text("Fade"),
             ),
           ],
         ),

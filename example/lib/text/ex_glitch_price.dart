@@ -21,7 +21,7 @@ class _ExZoGlitchPriceState extends State<ExZoGlitchPrice> {
           children: [
             // Just pass the price; the widget handles the rest internally
             ZoGlitchPriceText(
-              price: 54200.50,
+              price: _price,
               profitColor: Colors.green,
               lossColor: Colors.red,
             ),

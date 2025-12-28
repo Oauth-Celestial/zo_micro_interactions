@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 // Replace this with your actual import path
 import 'package:zo_micro_interactions/button/zo_enable_disable_button.dart';
 
-class ExEnableDisableButton extends StatefulWidget {
-  const ExEnableDisableButton({super.key});
+class ExZoEnableDisableButton extends StatefulWidget {
+  const ExZoEnableDisableButton({super.key});
 
   @override
-  State<ExEnableDisableButton> createState() => _ExEnableDisableButtonState();
+  State<ExZoEnableDisableButton> createState() =>
+      _ExZoEnableDisableButtonState();
 }
 
-class _ExEnableDisableButtonState extends State<ExEnableDisableButton> {
+class _ExZoEnableDisableButtonState extends State<ExZoEnableDisableButton> {
   final TextEditingController _controller = TextEditingController();
   bool _isButtonEnabled = false;
 

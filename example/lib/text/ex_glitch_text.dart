@@ -30,8 +30,8 @@ class _ExZoGlitchTextState extends State<ExZoGlitchText> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ZoGlitchText(
-              text: "ZoMicroInteraction",
-              autoStart: true,
+              text: "The Zerone",
+
               onLoaded: (animationController) {
                 firstController = animationController;
               },
