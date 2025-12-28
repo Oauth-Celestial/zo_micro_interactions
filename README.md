@@ -1,10 +1,12 @@
-# zo_micro_interactions
+
+
+<img width="3312" height="1640" alt="micro_banner" src="https://github.com/user-attachments/assets/5f1be0f4-ce28-4597-a272-059292526a3d" />
 
 [![pub package](https://img.shields.io/pub/v/zo_micro_interactions.svg)](https://pub.dev/packages/zo_micro_interactions)
 [![pub points](https://img.shields.io/pub/points/zo_micro_interactions?color=2E8B57&label=pub%20points)](https://pub.dev/packages/zo_micro_interactions)
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 
-**Zo Micro Interactions** A curated set of high-quality Flutter micro-interactions designed for modern, polished apps.
+**Zo Micro Interactions** Add life to your Flutter apps with a curated set of high-quality, motion-rich interactions.
 
 ## Getting started
 
