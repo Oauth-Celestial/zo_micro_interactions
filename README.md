@@ -1,6 +1,5 @@
 
-
-<img width="3312" height="1640" alt="micro_banner" src="https://github.com/user-attachments/assets/5f1be0f4-ce28-4597-a272-059292526a3d" />
+<img width="3312" heigth="600" alt="micro_banner" src="https://github.com/user-attachments/assets/5f1be0f4-ce28-4597-a272-059292526a3d" />
 
 [![pub package](https://img.shields.io/pub/v/zo_micro_interactions.svg)](https://pub.dev/packages/zo_micro_interactions)
 [![pub points](https://img.shields.io/pub/points/zo_micro_interactions?color=2E8B57&label=pub%20points)](https://pub.dev/packages/zo_micro_interactions)
@@ -85,7 +84,6 @@ ZoGlitchPriceText(
 # Alert
 
 ![Alert](https://github.com/user-attachments/assets/da4f0840-51a4-4742-ba22-b983ef4240f8)
-
 
 ```dart
 showZoAnimatedDialogue(

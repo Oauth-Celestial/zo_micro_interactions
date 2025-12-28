@@ -1,3 +1,7 @@
+## 0.0.3
+
+* Added glitch text .
+
 ## 0.0.2
 
 * Added Text animation.
