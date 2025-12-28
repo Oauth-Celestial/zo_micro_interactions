@@ -29,6 +29,8 @@ import 'package:zo_micro_interactions/zo_micro_interactions.dart';
 
 ## 1. Animated Text
 
+<img src="https://github.com/Oauth-Celestial/zo_micro_interactions/blob/dev/gifs/text_effect.gif?raw=true" height= 150px >
+
 ```dart
 ZoAnimatedText(
   key: ValueKey('animatedText$_type'),
@@ -46,6 +48,8 @@ ZoAnimatedText(
 ```
 
 ## 2.Glitch Text
+
+<img src="https://github.com/Oauth-Celestial/zo_micro_interactions/blob/dev/gifs/glitch_text.gif?raw=true" height =280>
 
 ```dart
 ZoGlitchText(
@@ -66,6 +70,8 @@ ZoGlitchText(
 
 ## 3.Glitch Price Text
 
+<img src="https://github.com/Oauth-Celestial/zo_micro_interactions/blob/dev/gifs/glitch_price.gif?raw=true"  height =280>
+
 ```dart
 ZoGlitchPriceText(
   price: 54200.50,
@@ -76,6 +82,8 @@ ZoGlitchPriceText(
 
 # Alert
 
+<img src="https://github.com/Oauth-Celestial/zo_micro_interactions/blob/dev/gifs/Alert.gif?raw=true" height =280>
+
 ```dart
 showZoAnimatedDialogue(
   context: context,
@@ -85,6 +93,8 @@ showZoAnimatedDialogue(
 ```
 
 # Button
+
+<img src="https://github.com/Oauth-Celestial/zo_micro_interactions/blob/dev/gifs/disable_button.gif?raw=true" height =280>
 
 ```dart
 ZoEnableDisableButton(
@@ -131,6 +141,8 @@ ZoEnableDisableButton(
 
 # Bounce Widget
 
+<img src="https://github.com/Oauth-Celestial/zo_micro_interactions/blob/dev/gifs/bounce_widget.gif?raw=true" height =280>
+
 ```dart
 ZoBounceWidget(
   onTap: () => print('Button Pressed'),
@@ -158,6 +170,8 @@ ZoBounceWidget(
 
 # Parallax Effect
 
+<img src="https://github.com/Oauth-Celestial/zo_micro_interactions/blob/dev/gifs/parallax.gif?raw=true" height =280>
+
 ```dart
 SizedBox(
   height: 250,
@@ -183,12 +197,11 @@ SizedBox(
 
 # Open Card Animation
 
-![Simulator Screen Recording - iPhone 15 Pro - 2025-12-13 at 16 28 47 (online-video-cutter com)](https://github.com/user-attachments/assets/0bf03c35-6f5a-4e6c-ace7-141f85b60828)
+<img src="https://github.com/Oauth-Celestial/zo_micro_interactions/blob/dev/gifs/app_store.gif?raw=true" height =280>
 
 ```dart
 ZoOpenCard(
   heroTag: 'cosmic_run',
-
   closedCard: Container(
     decoration: const BoxDecoration(
       image: DecorationImage(
@@ -226,23 +239,6 @@ ZoOpenCard(
   ),
 );
 ```
-
-- **`heroTag`**
-  - A unique identifier used by Flutter’s `Hero` widget.
-  - Links the closed card and the opened detail page for a smooth transition.
-
-- **`closedCard`**
-  - The widget displayed when the card is in its collapsed state.
-  - Typically used to show a preview such as an image, title, or summary.
-
-- **`detailPageHeader`**
-  - The header section of the opened detail page.
-  - Usually contains a hero image or prominent title that expands from the card.
-
-- **`detailPageBody`**
-  - The main content of the opened detail page.
-  - Must be **non-scrollable** — scrolling is handled internally by `ZoOpenCard`.
-  - Use layout widgets like `Column`, `Padding`, and `Text`.
 
 Feel free to post a feature requests or report a bug [issues](https://github.com/Oauth-Celestial/zo_micro_interactions/issues).
 
