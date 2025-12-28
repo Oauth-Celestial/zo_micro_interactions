@@ -82,7 +82,8 @@ ZoGlitchPriceText(
 
 # Alert
 
-<img src="https://github.com/Oauth-Celestial/zo_micro_interactions/blob/dev/gifs/Alert.gif?raw=true" height =280>
+![Alert](https://github.com/user-attachments/assets/da4f0840-51a4-4742-ba22-b983ef4240f8)
+
 
 ```dart
 showZoAnimatedDialogue(
