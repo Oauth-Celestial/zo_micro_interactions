@@ -1,5 +1,6 @@
 name: zo_micro_interactions
-description: "A curated set of high-quality Flutter micro-interactions designed for modern, polished apps"
+description: "A curated set of high-quality Flutter micro-interactions designed
+  for modern, polished apps"
 version: 0.0.3
 repository: https://github.com/Oauth-Celestial/zo_micro_interactions
 # homepage:
@@ -16,6 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
