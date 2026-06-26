@@ -1,4 +1,4 @@
-import 'package:example/buttons/ex_micro_buttons.dart';
+import 'package:example/ex_new_interactions.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,7 +6,7 @@ void main() {
     const MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home: ExMicroButtons(),
+      home: ExNewInteractions(),
     ),
   );
 }

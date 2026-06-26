@@ -32,7 +32,7 @@ class ZoShimmerButton extends StatefulWidget {
     this.onTap,
     this.child,
     this.sweepDuration = const Duration(milliseconds: 2200),
-    this.pauseBetweenSweeps = const Duration(milliseconds: 1400),
+    this.pauseBetweenSweeps = Duration.zero,
     this.shimmerColor = const Color(0x66FFFFFF),
     this.shimmerWidthFraction = 0.38,
     this.pressDuration = const Duration(milliseconds: 110),

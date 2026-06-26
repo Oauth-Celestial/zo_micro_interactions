@@ -82,9 +82,9 @@ class _ZoBreathingButtonState extends State<ZoBreathingButton>
         child: AnimatedBuilder(
           animation: _breath,
           builder: (context, _) {
-            final breath = 1.0 +
-                widget.breathAmplitude *
-                    math.sin(_breath.value * 2 * math.pi);
+            final breath =
+                1.0 +
+                widget.breathAmplitude * math.sin(_breath.value * 2 * math.pi);
             return Transform.scale(
               scale: breath,
               alignment: Alignment.center,

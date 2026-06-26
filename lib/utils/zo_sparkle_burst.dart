@@ -44,25 +44,35 @@ class _SparkleBurstWrapperState extends State<SparkleBurstWrapper>
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
+      clipBehavior: Clip.none,
       children: [
-        // Sparkle Layer restricted to user-defined size
-        SizedBox(
-          width: widget.size.width,
-          height: widget.size.height,
-          child: AnimatedBuilder(
-            animation: _controller,
-            builder: (context, child) {
-              return CustomPaint(
-                painter: SparklePainter(
-                  progress: _controller.value,
-                  color: widget.sparkleColor,
-                ),
-              );
-            },
+        // Child button defines the layout size
+        widget.builder(context, _controller),
+        
+        // Sparkle Layer restricted to user-defined size but doesn't inflate layout
+        Positioned.fill(
+          child: OverflowBox(
+            minWidth: 0,
+            maxWidth: double.infinity,
+            minHeight: 0,
+            maxHeight: double.infinity,
+            child: SizedBox(
+              width: widget.size.width,
+              height: widget.size.height,
+              child: AnimatedBuilder(
+                animation: _controller,
+                builder: (context, child) {
+                  return CustomPaint(
+                    painter: SparklePainter(
+                      progress: _controller.value,
+                      color: widget.sparkleColor,
+                    ),
+                  );
+                },
+              ),
+            ),
           ),
         ),
-        // Child button
-        widget.builder(context, _controller),
       ],
     );
   }
